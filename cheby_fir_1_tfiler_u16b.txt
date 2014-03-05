@@ -1,0 +1,94 @@
+/*
+
+FIR filter designed with
+http://t-filter.appspot.com
+
+sampling frequency: 80000 Hz
+
+fixed point precision: 16 bits
+
+* 0 Hz - 500 Hz
+  gain = 0
+  desired attenuation = -20 dB
+  actual attenuation = n/a
+
+* 600 Hz - 3500 Hz
+  gain = 1
+  desired ripple = 5 dB
+  actual ripple = n/a
+
+* 4000 Hz - 40000 Hz
+  gain = 0
+  desired attenuation = -40 dB
+  actual attenuation = n/a
+
+*/
+
+#define FILTER_TAP_NUM 64
+
+static int filter_taps[FILTER_TAP_NUM] = {
+  886,
+  -129,
+  -215,
+  -356,
+  -548,
+  -787,
+  -1063,
+  -1368,
+  -1689,
+  -2011,
+  -2317,
+  -2590,
+  -2812,
+  -2964,
+  -3031,
+  -2999,
+  -2858,
+  -2602,
+  -2229,
+  -1744,
+  -1157,
+  -483,
+  258,
+  1042,
+  1843,
+  2630,
+  3375,
+  4048,
+  4622,
+  5076,
+  5389,
+  5546,
+  5546,
+  5389,
+  5076,
+  4622,
+  4048,
+  3375,
+  2630,
+  1843,
+  1042,
+  258,
+  -483,
+  -1157,
+  -1744,
+  -2229,
+  -2602,
+  -2858,
+  -2999,
+  -3031,
+  -2964,
+  -2812,
+  -2590,
+  -2317,
+  -2011,
+  -1689,
+  -1368,
+  -1063,
+  -787,
+  -548,
+  -356,
+  -215,
+  -129,
+  886
+};
